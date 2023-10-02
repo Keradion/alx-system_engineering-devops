@@ -1,2 +1,2 @@
 #!/bin/bash
-	find -type f -name *.js > cat | rm cat 
+	ls -l | find -type f -name *.js | rm 
