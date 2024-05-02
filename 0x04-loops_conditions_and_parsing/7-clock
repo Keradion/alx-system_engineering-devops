@@ -13,5 +13,5 @@ do
 	   ((min=min+1))
    done
    ((counter=counter+1))
-   ((min=0))
+   ((min=1))
 done
