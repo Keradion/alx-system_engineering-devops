@@ -7,7 +7,7 @@ min=1
 while [ $counter -le 12 ]; 
 do
    echo "Hour: $counter"
-   until [ $min -eq 60 ]; 
+   while [ $min -le 59 ]; 
    do
 	   echo "$min"
 	   ((min=min+1))
