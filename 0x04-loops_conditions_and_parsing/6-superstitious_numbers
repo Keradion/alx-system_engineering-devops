@@ -4,18 +4,19 @@
 counter=1
 
 while [ $counter -lt 21 ]; do
-if [ $counter == 4 ]; then
-	echo "$counter"
-	echo "bad luck from China "
-elif [ $counter == 9 ]; then
-	echo "$counter"
-	echo "bad luck from Japan"
-elif [ $counter == 17 ]; then
-	echo "$counter"
-	echo "bad luck from Italy"
-else
-	echo "$counter"
-fi
+case $counter in
+4)
+	echo "$counter" ;
+	echo "bad luck from China" ;;
+9)
+	echo "$counter" ;
+	echo "bad luck from Japan" ;;
+17)
+	echo "$counter" ;
+	echo "bad luck from Italy" ;;
+*)
+	echo "$counter" ;
+esac
    ((counter=counter+1))
 done
 
