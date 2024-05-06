@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#This script displays a text indefinitely with sleep in between of iterations 
+
+count=0
+
+while [ $count -ne -1 ] 
+do
+	echo "To infinity and beyond"
+	((count=count+1))
+	sleep 2
+done
