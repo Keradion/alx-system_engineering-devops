@@ -2,4 +2,4 @@
 #This script use kill command to terminate a process running infinitely
 
 psid=$( pgrep -f 4-to_infinity_and_beyond )
-kill $psid 
+kill "$psid" 
