@@ -1,5 +1,5 @@
+# This puppet manifest creates a file 
 file {'/tmp/school':
-  # This manifest creates a new file 
   ensure  => 'present',
   content => 'I love Puppet',
   owner   => 'www-data',
