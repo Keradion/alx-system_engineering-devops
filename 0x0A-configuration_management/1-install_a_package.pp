@@ -1,6 +1,6 @@
 # This puppet manifest Install flask using pip3
 
 package { 'flask':
-  ensure   => 'latest',
-  provider => 'pip3',
+  ensure   => '2.1.0',
+  provider => 'pip3'
 }
