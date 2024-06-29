@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Generate RSA key pairs with 4096 bit size and save it under file school
+
+ssh-keygen -f school -b 4096 -N betty
