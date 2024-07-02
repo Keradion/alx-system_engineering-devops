@@ -8,7 +8,7 @@ sudo apt-get -y update
 apt-get -y install nginx
 
 # append custom text to nginx html index page
-echo "Hello World!" >> 
+sudo sh -c 'echo "Hello World!" >> /var/www/html/index.html'
 
 # restarting nginx web server
 sudo /etc/init.d/nginx restart
