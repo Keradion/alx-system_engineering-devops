@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Install nginx web server
+
+# update packages
+sudo apt-get -y update
+
+# install nginx web server
+apt-get -y install nginx
+
+# append custom text to nginx html index page
+echo "Hello World!" >> 
+
+# restarting nginx web server
+sudo /etc/init.d/nginx restart
