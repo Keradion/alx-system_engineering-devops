@@ -10,4 +10,4 @@ SERVER_IP=$2
 USERNAME=$3
 SSH_KEY_PATH=$4
 
-scp -i "$SSH_KEY_PATH" "$FILE_PATH" "$USERNAME@$SERVER_IP":/home/ubuntu
+scp -o "StrictHostKeyChecking=no" -i "$SSH_KEY_PATH" "$FILE_PATH" "$USERNAME@$SERVER_IP":~/
