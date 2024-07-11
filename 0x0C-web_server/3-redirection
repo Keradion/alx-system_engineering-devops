@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Install nginx web server
+
+# update packages
+sudo apt-get -y update
+
+# install nginx web server
+sudo apt-get -y install nginx
+
+# append custom text to nginx html index page
+echo "Hello World!" > /var/www/html/index.html
+
+# append redirection in config file
+sed -i "37i\rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
+
+# restarting nginx web server
+sudo /etc/init.d/nginx restart
