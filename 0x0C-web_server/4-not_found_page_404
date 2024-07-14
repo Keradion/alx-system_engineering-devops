@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Install nginx web server
+
+# update packages
+sudo apt-get -y update
+
+# install nginx web server
+sudo apt-get -y install nginx
+
+# append custom text to nginx html index page
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+
+# append redirection in config file
+sudo sed -i '/server_name _;/a \    rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+
+# append custome 404 error page
+
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custome_404_error.html
+
+# append error directive in nginx config file
+sudo sed -i '/server_name _;/a \    error_page 404 /custome_404_error.html;\n    location = /custome_404_error.html {\n        root /usr/share/nginx/html;\n        internal;\n    }' /etc/nginx/sites-available/default
+
+# restarting nginx web server
+sudo /etc/init.d/nginx restart
