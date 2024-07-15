@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # setup load balancer using roundrobin algorithm
+
 sudo apt-get -y install haproxy
 
 sudo tee -a /etc/haproxy/haproxy.cfg <<EOL
@@ -17,3 +18,4 @@ backend web_servers
      server 03-web-02 34.239.107.9:80 check
 
 EOL
+service haproxy restart
