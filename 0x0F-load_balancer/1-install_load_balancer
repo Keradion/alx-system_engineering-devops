@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+sudo tee -a /etc/haproxy/haproxy.cfg <<EOL
+frontend servers
+    bind *:80
+    default_backend web_servers
+
+EOL
+
+sudo tee -a /etc/haproxy/haproxy.cfg <<EOL
+backend web_servers
+     mode http
+     balance roundrobin
+     server 03-web-01 54.152.61.206:80 check
+     server 03-web-02 34.239.107.9:80 check
+
+EOL
