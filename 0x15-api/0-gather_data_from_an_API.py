@@ -22,9 +22,10 @@ if __name__ == '__main__':
         if each.get('userId') == employee_id and each.get('completed') is True:
             count = count + 1
 
-    print('Employee {} is done with tasks({}/20):'.format(employee_name, count))
+    print('Employee {} is done with tasks({}/20):'.format(
+        employee_name, count))
 
     for each in todo_response:
         if each.get('userId') == employee_id and each.get('completed') is True:
-            print('     ', end='')
+            print('\t ', end='')
             print(each['title'])
