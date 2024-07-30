@@ -34,7 +34,6 @@ if __name__ == '__main__':
             # Exporting to CSV
         if each.get('userId') == employee_id:
             with open('USER_ID.csv', 'a', newline='') as file:
-                writer_object = csv.writer(file, delimiter=',')
-                writer_object.writerow([str(each.get(
-                    'userId')), employee_name, each.get(
+                writer_object = csv.writer(file, delimiter=',', quoting=csv.QUOTE_ALL)
+                writer_object.writerow([each.get('userId'), employee_name, each.get(
                     'completed'), each.get('title')])
