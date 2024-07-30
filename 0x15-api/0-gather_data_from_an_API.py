@@ -18,12 +18,12 @@ user_response = requests.get(api_user_url)
 employee_name = user_response.json()['name']
 
 for each in todo_response:
-    if each['userId'] == employee_id and if each['completed'] is True:
+    if each.get('userId') == employee_id and each.get('completed') is True:
         count = count + 1
 
 print('Employee {} is done with tasks({}/20):'.format(employee_name, count))
 
 for each in todo_response:
-    if each['userId'] == employee_id and if each['completed'] is True:
+    if each.get('userId') == employee_id and each.get('completed') is True:
         print('     ', end='')
         print(each['title'])
