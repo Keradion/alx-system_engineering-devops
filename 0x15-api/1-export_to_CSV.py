@@ -17,11 +17,11 @@ if __name__ == '__main__':
 
     todo_response = requests.get(api_todo_url).json()
     user_response = requests.get(api_user_url)
-    employee_name = user_response.json()['name']
+    user_name = user_response.json()['username']
 
     for each in todo_response:
         if each.get('userId') == employee_id:
             with open('USER_ID.csv', 'a', newline='') as file:
                 writer_object = csv.writer(file, delimiter=',', quoting=csv.QUOTE_ALL)
-                writer_object.writerow([each.get('userId'), employee_name, each.get(
+                writer_object.writerow([each.get('userId'), user_name, each.get(
                     'completed'), each.get('title')])
