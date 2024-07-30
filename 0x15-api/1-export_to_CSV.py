@@ -20,18 +20,6 @@ if __name__ == '__main__':
     employee_name = user_response.json()['name']
 
     for each in todo_response:
-        if each.get('userId') == employee_id and each.get('completed') is True:
-            count = count + 1
-
-    print('Employee {} is done with tasks({}/20):'.format(
-        employee_name, count))
-
-    for each in todo_response:
-        if each.get('userId') == employee_id and each.get('completed') is True:
-            print('\t ', end='')
-            print(each['title'])
-
-            # Exporting to CSV
         if each.get('userId') == employee_id:
             with open('USER_ID.csv', 'a', newline='') as file:
                 writer_object = csv.writer(file, delimiter=',', quoting=csv.QUOTE_ALL)
