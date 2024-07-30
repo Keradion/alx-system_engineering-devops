@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This script uses REST API and a given employee ID  to return information
-about the TODO list progress of the employee.
+about the TODO list progress of the employee & exports the data into json.
 """
 import csv
 import json
@@ -37,15 +37,6 @@ if __name__ == '__main__':
             
             print('\t ', end='')
             print(each['title'])
-
-        if each.get('userId') == employee_id:
-            
-            with open('USER_ID.csv', 'a', newline='') as csv_file:
-                writer_object = csv.writer(
-                        csv_file, delimiter=',', quoting=csv.QUOTE_ALL)
-                writer_object.writerow([each.get(
-                    'userId'), user_name, each.get(
-                    'completed'), each.get('title')])
 
         if each.get('userId') == employee_id:
 
