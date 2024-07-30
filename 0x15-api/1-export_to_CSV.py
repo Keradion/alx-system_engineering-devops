@@ -38,25 +38,13 @@ if __name__ == '__main__':
             print('\t ', end='')
             print(each['title'])
 
+        file_name = str(user_id) + '.csv'
+
         if each.get('userId') == employee_id:
             
-            with open('USER_ID.csv', 'a', newline='') as csv_file:
+            with open(file_name, 'a', newline='') as csv_file:
                 writer_object = csv.writer(
                         csv_file, delimiter=',', quoting=csv.QUOTE_ALL)
                 writer_object.writerow([each.get(
                     'userId'), user_name, each.get(
                     'completed'), each.get('title')])
-
-        if each.get('userId') == employee_id:
-
-            temp_dict["task"] = each.get('title')
-            temp_dict["completed"] = each.get('completed')
-            temp_dict["username"] = user_name 
-            employee_list.append(temp_dict)
-            temp_dict = {}
-    
-    employee_dict[user_id] = employee_list
-
-    with open('USER_ID.json', 'a') as json_file:
-        json_object = json.dumps(employee_dict)
-        json_file.write(json_object)
