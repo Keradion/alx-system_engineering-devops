@@ -34,14 +34,12 @@ if __name__ == '__main__':
 
     for each in todo_response:
         if each.get('userId') == employee_id and each.get('completed') is True:
-            
             print('\t ', end='')
             print(each['title'])
 
         file_name = str(user_id) + '.csv'
 
         if each.get('userId') == employee_id:
-            
             with open(file_name, 'a', newline='') as csv_file:
                 writer_object = csv.writer(
                         csv_file, delimiter=',', quoting=csv.QUOTE_ALL)

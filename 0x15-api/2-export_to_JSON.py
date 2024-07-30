@@ -32,10 +32,8 @@ if __name__ == '__main__':
     print('Employee {} is done with tasks({}/20):'.format(
         employee_name, count))
 
-
     for each in todo_response:
         if each.get('userId') == employee_id and each.get('completed') is True:
-            
             print('\t ', end='')
             print(each['title'])
 
@@ -43,10 +41,9 @@ if __name__ == '__main__':
 
             temp_dict["task"] = each.get('title')
             temp_dict["completed"] = each.get('completed')
-            temp_dict["username"] = user_name 
+            temp_dict["username"] = user_name
             employee_list.append(temp_dict)
             temp_dict = {}
-    
     employee_dict[user_id] = employee_list
     file_name = str(user_id) + '.json'
 
