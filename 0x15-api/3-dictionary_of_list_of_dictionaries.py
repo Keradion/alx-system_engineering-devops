@@ -30,6 +30,6 @@ if __name__ == '__main__':
 
         employee_dict[user_id] = (employee_list)
 
-    with open('todo_all_employees.json', 'a') as json_file:
+    with open('todo_all_employees.json', 'w') as json_file:
         json_object = json.dumps(employee_dict)
         json_file.write(json_object)
