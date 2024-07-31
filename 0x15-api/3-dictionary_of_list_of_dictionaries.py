@@ -18,8 +18,6 @@ if __name__ == '__main__':
 
     api_todo_url = 'https://jsonplaceholder.typicode.com/todos/'
     todo_response = requests.get(api_todo_url).json()
-
-
     for user in user_response:
         user_id = user['id']
         employee_list = []
