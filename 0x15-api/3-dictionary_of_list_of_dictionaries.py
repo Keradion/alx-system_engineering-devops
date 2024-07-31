@@ -21,8 +21,8 @@ if __name__ == '__main__':
         user_id = user['id']
         employee_list = []
         for todo in todo_response:
-            if user_id == todo['userId']:
-                temp_dict["username"] = user['username']
+            if user_id == todo.get('userId'):
+                temp_dict["username"] = user.get('username')
                 temp_dict['task'] = todo.get('title')
                 temp_dict['completed'] = todo.get('completed')
                 employee_list.append(temp_dict)
