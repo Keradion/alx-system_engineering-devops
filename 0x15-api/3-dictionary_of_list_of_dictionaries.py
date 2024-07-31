@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This script uses REST API and a given employee ID  to return information
-about the TODO list progress of the employee.
+about the TODO list progress of all the employees.
 """
 import json
 import requests
@@ -18,7 +18,7 @@ if __name__ == '__main__':
     api_todo_url = 'https://jsonplaceholder.typicode.com/todos/'
     todo_response = requests.get(api_todo_url).json()
     for user in user_response:
-        user_id = user['id']
+        user_id = user.get('id')
         employee_list = []
         for todo in todo_response:
             if user_id == todo.get('userId'):
